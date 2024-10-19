@@ -5,119 +5,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
-
-        * {
-            margin: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background-color: hsl(218, 23%, 16%);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            font-family: "Manrope", sans-serif;
-        }
-
-        .par {
-            background-color: hsl(217, 19%, 24%);
-            padding: 35px;
-            display: flex;
-            flex-direction: column;
-            text-align: center;
-            justify-content: center;
-            border-radius: 20px;
-            align-items: center;
-            width: 500px;
-        }
-
-        .hg {
-            color: hsl(150, 100%, 66%);
-            letter-spacing: 7px;
-            font-size: 11px;
-        }
-
-        .parg {
-            color: hsl(193, 38%, 86%);
-            font-weight: 800;
-            font-size: 20px;
-            margin: 30px 0;
-        }
-
-        .a {
-            background-color: hsl(150, 100%, 66%);
-            border-radius: 50%;
-            font-size: 30px;
-            width: 50PX;
-            height: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            user-select: none;
-            position: relative;
-            top: 55px;
-            transition: 0.5s;
-        }
-
-        .a:hover {
-            box-shadow: 0px 0px 20px hsl(150, 89%, 38%);
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+    <div class="parent">
+        <div class="head">
+            <h3>Advice #</h3>
+        </div>
+        <div class="text">
+            <p>""</p>
+        </div>
 
-    <div class="par">
-        <h3 class="hg">Advice #</h3>
-        <p class="parg">Click</p>
-        <svg width="444" height="16" xmlns="http://www.w3.org/2000/svg">
-            <g fill="none" fill-rule="evenodd">
-                <path fill="#4F5D74" d="M0 8h196v1H0zM248 8h196v1H248z" />
-                <g transform="translate(212)" fill="#CEE3E9">
-                    <rect width="6" height="16" rx="3" />
-                    <rect x="14" width="6" height="16" rx="3" />
-                </g>
-            </g>
-        </svg>
-
-        <div class="a">
-            <ion-icon name="shuffle-outline"></ion-icon>
+        <div class="distanc">
+            <picture>
+                <source srcset="./advice-generator-app-main/images/pattern-divider-mobile.svg"
+                    media="(max-width:762px)">
+                <img src="./advice-generator-app-main/images/pattern-divider-desktop.svg" alt="">
+            </picture>
+        </div>
+        <div class="button">
+            <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M20 0H4a4.005 4.005 0 0 0-4 4v16a4.005 4.005 0 0 0 4 4h16a4.005 4.005 0 0 0 4-4V4a4.005 4.005 0 0 0-4-4ZM7.5 18a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm0-9a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm4.5 4.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm4.5 4.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm0-9a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Z"
+                    fill="#202733" />
+            </svg>
         </div>
     </div>
 
-    <script>
-        let h = document.querySelector(".hg");
-        let p = document.querySelector(".parg");
-        let but = document.querySelector(".a");
-
-
-        but.addEventListener("click", function () {
-
-            fetch("	https://api.adviceslip.com/advice").then((res) => res.json()).then((res2) => {
-                console.log(res2)
-                h.innerHTML = `Advice #${res2.slip.id}`
-                p.innerHTML = `"${res2.slip.advice}"`
-            })
-
-        })
-
-    </script>
-
-
-
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
-    <script>
-
-    </script>
-
+    <script src="main.js"></script>
 </body>
 
 </html>
